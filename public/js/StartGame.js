@@ -14,7 +14,7 @@ function StartGame(y) {
     };
 
 
-    canvas.addEventListener('click', click)
+    canvas.addEventListener('click', click);
     ctx.beginPath();
     ctx.rect(rect.x, rect.y, rect.width, rect.heigth);
     ctx.fillStyle = 'rgba(225,225,225,0.5)';

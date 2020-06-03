@@ -69,7 +69,7 @@ function LoadImg() {
         // debugger;
         if (arrStone[r].x < -200) {
             arrStone.splice(r, 1);
-            length3--
+            length3--;
             point++;
         }
         if (arrStone[r].status === 'left') {
@@ -93,11 +93,11 @@ function LoadImg() {
         gecko.setTop(geckoTop);
         geckoTop = geckoTop - 4;
         if (gecko.y < 70) {
-            geckoTop = gecko.y
-            gecko.setStatus(1)
+            geckoTop = gecko.y;
+            gecko.setStatus(1);
             gecko.setStyle(StyleGecko(64))
         }
-        geckoTop = geckoTop - 2 - (speed / 100)
+        geckoTop = geckoTop - 2 - (speed / 100);
         console.log('up', geckoTop)
     }
     if (gecko.status === 'down') {
@@ -105,10 +105,10 @@ function LoadImg() {
         geckoTop = geckoTop + 4;
         if (gecko.y >= 245) {
             style4 = 0;
-            gecko.setStatus(3)
+            gecko.setStatus(3);
             gecko.setStyle(StyleGecko(style4));
         }
-        geckoTop = geckoTop + 2 + (speed / 100)
+        geckoTop = geckoTop + 2 + (speed / 100);
         console.log('down', geckoTop)
     }
 
@@ -145,8 +145,8 @@ function LoadImg() {
     for (let z = 0; z < length3; z++) {
         const c1 = {};
 
-        c1.x = arrStone[z].x + (arrStone[z].width / 2)
-        c1.y = arrStone[z].y + (arrStone[z].height / 2)
+        c1.x = arrStone[z].x + (arrStone[z].width / 2);
+        c1.y = arrStone[z].y + (arrStone[z].height / 2);
         if(arrStone[z].width < arrStone[z].height){
             c1.radius = arrStone[z].width / 2
         }else {
@@ -157,7 +157,7 @@ function LoadImg() {
         let dy = c1.y - c2.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < c1.radius + c2.radius) {
-            clearTimeout(timer)
+            clearTimeout(timer);
             StartGame(100);
             ctx.fillText("Game Over", 390, 220);
             speed = 1;
@@ -170,16 +170,16 @@ StartGame(100);
 
 document.addEventListener('keyup', function (event) {
     if (event.keyCode === 32 && gecko.status !== 'down ') {
-        geckoTop = gecko.y
-        gecko.setStatus(1)
-        gecko.setStyle(StyleGecko(64))
+        geckoTop = gecko.y;
+        gecko.setStatus(1);
+        gecko.setStyle(StyleGecko(64));
         gecko.setTop(geckoTop);
     }
 });
 document.addEventListener('keydown', function (event) {
     if (event.keyCode === 32 && gecko.status === 'run') {
-        geckoTop = gecko.y
-        gecko.setStatus(0)
+        geckoTop = gecko.y;
+        gecko.setStatus(0);
         gecko.setStyle(StyleGecko(62))
     }
 });
